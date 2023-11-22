@@ -1,0 +1,18 @@
+---
+import Company from "@/componets/Company.astro"
+import { type CompanyType } from "@/lib/data"
+
+interface Props {
+	companies: CompanyType[]
+}
+
+const { companies } = Astro.props;
+---
+<article class="grid gap-4">
+  <h1 class="text-4xl uppercase mt-4 text-zinc-300">Experiencia</h1>
+  {
+    companies.map((company: CompanyType) => (
+      <Company company={company} />
+    ))
+  }
+</article>
