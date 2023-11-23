@@ -9,7 +9,7 @@ interface Props {
 const { companies } = Astro.props;
 ---
 <article class="grid gap-4">
-  <h1 class="text-4xl uppercase mt-4 text-zinc-300">Experiencia</h1>
+  <h3 class="text-4xl uppercase mt-4 text-zinc-300">Experiencia</h3>
   {
     companies.map((company: CompanyType) => (
       <Company company={company} />
