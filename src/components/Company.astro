@@ -14,10 +14,10 @@ const formatedEnd = endDate ? new Intl.DateTimeFormat("es-MX", {month:'long', ye
 ---
 
 <div class="mb-4">
-  <strong class="flex text-xl uppercase text-zinc-300">
+  <h4 class="flex text-xl uppercase text-zinc-300">
     <Icon class="inline w-[1.5rem] text-emerald-600" name="ic:baseline-arrow-right" />
     { name }
-  </strong>
+  </h4>
   <em>{ position } ({formatedStart} - {formatedEnd})</em>
 
   { projects && projects.length && 
@@ -38,5 +38,5 @@ const formatedEnd = endDate ? new Intl.DateTimeFormat("es-MX", {month:'long', ye
   </p>
   }
 
-  { link && <a title={ name } class="hover:text-zinc-100 underline" href={ link } target="_blank">{ link }</a> }
+  { link && <a aria-label={ name } title={ name } class="hover:text-zinc-100 underline" href={ link } target="_blank">{ link }</a> }
 </div>

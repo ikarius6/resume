@@ -4,8 +4,7 @@ import { Icon } from 'astro-icon';
 ---
 
 <article class="lg:sticky lg:top-4 flex flex-col items-center text-zinc-400">
-    <div id="background" class="hidden lg:block flex-row h-[50vh] w-full min-h-[200px]">
-    </div>
+    <div role="img" aria-label="background image" id="background" class="hidden lg:block flex-row h-[50vh] w-full min-h-[200px]"></div>
     <div id="info" class="flex flex-col lg:h-[50vh] w-full items-center justify-around relative">
       <picture id="avatar" class="lg:block mt-4 lg:absolute lg:top-0 lg:mt-[-4.5rem]">
         <img alt="Alex Omar avatar" class="w-36 h-36 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={Avatar.src}>
@@ -16,11 +15,11 @@ import { Icon } from 'astro-icon';
       </div>
       <nav class="mt-[2vh] p-2">
         <ol class="flex flex-row">
-          <li class="w-10 m-2"><a target="_blank" title="GitHub" class="hover:text-zinc-100" href="http://git.alexomar.com/"><Icon name="mdi:github"></Icon></a></li>
-          <li class="w-10 m-2"><a target="_blank" title="LinkedIn" class="hover:text-zinc-100" href="https://www.linkedin.com/in/alejandro-olp"><Icon name="mdi:linkedin"></Icon></a></li>
-          <li class="w-10 m-2"><a target="_blank" title="Curso de M102: MongoDB for DBAs" class="hover:text-zinc-100" href="http://university.mongodb.com/course_completion/31049f069e72406d9e707ee0d273673b"><Icon name="simple-icons:mongodb"></Icon></a></li>
-          <li class="w-10 m-2"><a target="_blank" title="Curso de M101P: MongoDB for Developers" class="hover:text-zinc-100" href="http://university.mongodb.com/course_completion/31049f069e72406d9e707ee0d273673b"><Icon name="simple-icons:mongodb"></Icon></a></li>
-          <li class="w-10 m-2"><a target="_blank" title="Programación Estadística con R" class="hover:text-zinc-100" href="https://www.coursera.org/account/accomplishments/certificate/752DWTJGA5GM"><Icon name="simple-icons:r"></Icon></a></li>
+          <li class="w-10 m-2"><a target="_blank" aria-label="GitHub" title="GitHub" class="hover:text-zinc-100" href="http://git.alexomar.com/"><Icon name="mdi:github"></Icon></a></li>
+          <li class="w-10 m-2"><a target="_blank" aria-label="LinkedIn" title="LinkedIn" class="hover:text-zinc-100" href="https://www.linkedin.com/in/alejandro-olp"><Icon name="mdi:linkedin"></Icon></a></li>
+          <li class="w-10 m-2"><a target="_blank" aria-label="Curso de M102: MongoDB for DBAs" title="Curso de M102: MongoDB for DBAs" class="hover:text-zinc-100" href="http://university.mongodb.com/course_completion/31049f069e72406d9e707ee0d273673b"><Icon name="simple-icons:mongodb"></Icon></a></li>
+          <li class="w-10 m-2"><a target="_blank" aria-label="Curso de M101P: MongoDB for Developers" title="Curso de M101P: MongoDB for Developers" class="hover:text-zinc-100" href="http://university.mongodb.com/course_completion/31049f069e72406d9e707ee0d273673b"><Icon name="simple-icons:mongodb"></Icon></a></li>
+          <li class="w-10 m-2"><a target="_blank" aria-label="Programación Estadística con R" title="Programación Estadística con R" class="hover:text-zinc-100" href="https://www.coursera.org/account/accomplishments/certificate/752DWTJGA5GM"><Icon name="simple-icons:r"></Icon></a></li>
         </ol>
       </nav>
     </div>
