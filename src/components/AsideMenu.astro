@@ -23,7 +23,7 @@ const t = useTranslations(currentLang);
           {
             Object.entries(languages).map(([lang, label]) => (
               <li class="mt-4 mx-2">
-                <a class:list={[
+                <a data-astro-reload class:list={[
                   "hover:text-zinc-200",
                   currentLang != lang || "underline"
                 ]} aria-label={label} title={label} href={`/${lang}/`}>{label}</a>
