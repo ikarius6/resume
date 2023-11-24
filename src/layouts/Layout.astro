@@ -3,6 +3,11 @@ import Icon from 'astro-icon'
 import AsideMenu from '@/components/AsideMenu.astro'
 import Main from '@/components/Main.astro'
 import Footer from '@/componets/Footer.astro'
+import { ViewTransitions } from "astro:transitions"
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
 	title: string;
@@ -13,14 +18,14 @@ const { title } = Astro.props;
 const metadata = {
   author: "Alex Omar",
   url: "https://alexomar.com/",
-  description: "Soy un programador apasionado, me gusta mantenerme en movimiento y seguir aprendiendo todos los dias, me interesa ayudar a encontrar soluciones eficientes o crearlas.",
+  description: t('about_me_1'),
   image: "/img/avatar-min.jpg",
-  keywords: "Seguridad, Tecnología, Desarrollo, Infraestructura, Control, Soporte, Consultoría, Sistemas, Coordinación, Dirección, Planeación y Realización de Proyectos, Innovación, Actualidad, Gadgets"
+  keywords: t('keywords')
 }
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={ metadata.description } />
@@ -28,7 +33,7 @@ const metadata = {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-
+    
     <meta property="og:url" content={ metadata.url } />
     <meta property="og:title" content={ title } /> 
     <meta property="og:description" content={ metadata.description } /> 
@@ -42,9 +47,11 @@ const metadata = {
     <meta name="description" content={ metadata.description } />
     <meta name="keywords" content={ metadata.keywords } />
     <meta name="author" content={ metadata.author } />
+
+    <ViewTransitions fallback="none" />
 	</head>
 	<body>
-		<div id="app" class="relative h-screen p-4 gap-4">
+		<div id="app" class="relative h-screen gap-4 p-4">
       <aside class="[grid-area:aside] rounded-lg flex-col flex bg-zinc-900">
         <AsideMenu />
       </aside>

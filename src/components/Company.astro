@@ -1,7 +1,11 @@
 ---
 import Icon from 'astro-icon'
 import type { CompanyType } from "@/lib/data"
-import { Text } from './Text'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { ui } from '@/i18n/ui';
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
 interface Props {
   company: CompanyType
@@ -9,6 +13,9 @@ interface Props {
 
 const { company } = Astro.props
 const { name, position, startDate, endDate, projects, technologies, extras, link } = company
+
+const formattedStartDate = new Intl.DateTimeFormat(currentLang=='en'?"en-US":"es-MX", {month:'long', year: 'numeric'}).format(startDate)
+const formattedEndDate = new Intl.DateTimeFormat(currentLang=='en'?"en-US":"es-MX", {month:'long', year: 'numeric'}).format(endDate)
 ---
 
 <div class="mb-4">
@@ -17,25 +24,25 @@ const { name, position, startDate, endDate, projects, technologies, extras, link
     { name }
   </h4>
   <em>
-    <Text text={position} client:load /> 
-    ({ startDate ? <Text date={startDate} client:load /> : ''} - {endDate ? <Text date={endDate} client:load />: <Text text="current" client:load />})
+    {t(position as keyof typeof ui[typeof currentLang])}
+    ({ startDate ? `${formattedStartDate} - ${endDate ? formattedEndDate : t('current')}`: t('current') })
   </em>
 
   { projects && projects.length && 
   <p>
-      <strong><Text text ='projects' client:load />: </strong> { projects.join(', ') }
+      <strong>{t('projects')}: </strong> { projects.join(', ') }
   </p>
   }
 
   { technologies && technologies.length && 
       <p>
-      <strong><Text text ='technologies' client:load />: </strong> { technologies.join(', ') }
+      <strong>{t('technologies')}: </strong> { technologies.join(', ') }
       </p>
   }
 
   { extras && extras.length && 
   <p>
-      <strong><Text text ='others' client:load />: </strong> { extras.join(', ') }
+      <strong>{t('others')}: </strong> { extras.join(', ') }
   </p>
   }
 

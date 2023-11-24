@@ -1,7 +1,10 @@
 ---
 import Company from "@/componets/Company.astro"
 import { type CompanyType } from "@/lib/data"
-import { Text } from "./Text"
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
 	companies: CompanyType[]
@@ -10,7 +13,7 @@ interface Props {
 const { companies } = Astro.props;
 ---
 <article class="grid gap-4">
-  <h3 class="text-4xl uppercase mt-4 text-zinc-300"><Text text ='experience' client:load /></h3>
+  <h3 class="text-4xl uppercase mt-4 text-zinc-300">{ t('experience') }</h3>
   {
     companies.map((company: CompanyType) => (
       <Company company={company} />
