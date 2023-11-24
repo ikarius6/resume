@@ -3,34 +3,34 @@ import Companies from "@/components/Companies.astro";
 import { companies, technologies } from "@/lib/data";
 import { Icon } from 'astro-icon'
 import Technology from "@/components/Technology.astro";
+import { Text } from "./Text";
 ---
 
 <section class="grid grid-cols-1 text-zinc-400 gap-4 p-4 pt-0">
   <nav class="sticky top-0 bg-zinc-900 p-4 z-50 border-b-2">
     <ul class="z-20 flex justify-evenly">
-      <li><a title="Inicio" id="inicio" class="hover:text-neutral-100 flex flex-col" href="/"><Icon class="h-4 inline" name="ion:home-sharp" /> Inicio</a></li>
-      <li><a title="Contáctame" id="contactame" class="hover:text-neutral-100 flex flex-col" href="#"><Icon class="h-4 inline" name="mdi:contact" /> Contáctame</a></li>
-      <li><a title="Biblioteca" class="hover:text-neutral-100 flex flex-col" href="https://docs.alexomar.com/biblioteca/"><Icon class="h-4 inline" name="ion:library" /> Biblioteca</a></li>
-      <li><a target="_blank" aria-label="Descarga" title="Descarga" class="text-emerald-600 hover:text-sky-400 flex flex-col" href="https://alexomar.com/docs/CVAlejandrolopez.pdf" type="application/pdf"><Icon class="h-4 inline" name="ic:baseline-download" /> <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 hover:to-sky-400 hover:from-emerald-600">Descargar</span></a></li>
+      <li><a title="Inicio" id="inicio" class="hover:text-neutral-100 flex flex-col" href="/"><Icon class="h-4 inline" name="ion:home-sharp" /> <Text text='home' client:load /></a></li>
+      <li><a title="Contáctame" id="contactame" class="hover:text-neutral-100 flex flex-col" href="#"><Icon class="h-4 inline" name="mdi:contact" /> <Text text='contact_me' client:load /></a></li>
+      <li><a title="Biblioteca" class="hover:text-neutral-100 flex flex-col" href="https://docs.alexomar.com/biblioteca/"><Icon class="h-4 inline" name="ion:library" /> <Text text='library' client:load /></a></li>
+      <li><a target="_blank" aria-label="Descarga" title="Descarga" class="text-emerald-600 hover:text-sky-400 flex flex-col" href="https://alexomar.com/docs/CVAlejandrolopez.pdf" type="application/pdf"><Icon class="h-4 inline" name="ic:baseline-download" /> <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 hover:to-sky-400 hover:from-emerald-600"><Text text='download' client:load /></span></a></li>
     </ul>
   </nav>
 
   <article class="grid gap-4">
     <h3 class="text-4xl uppercase mt-4 text-zinc-300 relative">
-      Sobre mí
+      <Text text ='about_me' client:load />
     </h3>
-    <p class="">
-      Soy un programador apasionado, me gusta mantenerme en movimiento y seguir aprendiendo todos los dias, me interesa ayudar a encontrar soluciones eficientes o crearlas.
-      Soy extremadamente curioso, me interesa la seguridad informática y la involucro en todo lo que hago.
+    <p>
+      <Text text ='about_me_1' client:load />
     </p>
     <p>
-      Actualmente vivo en: México
+      <Text text ='about_me_2' client:load />
       <pre class="text-zinc-300 font-mono">~$ telnet cv.alexomar.com 1337</pre>
     </p>
   </article>
 
   <article class="grid gap-4">
-    <h3 class="text-4xl uppercase mt-4 text-zinc-300">Tecnologías</h3>
+    <h3 class="text-4xl uppercase mt-4 text-zinc-300"><Text text ='technologies' client:load /></h3>
     <ul class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-4 items-center text-center">
       {technologies.map((technology) => (<Technology technology={technology} />)) }
     </ul>

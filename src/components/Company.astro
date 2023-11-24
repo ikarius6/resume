@@ -1,6 +1,7 @@
 ---
 import Icon from 'astro-icon'
 import type { CompanyType } from "@/lib/data"
+import { Text } from './Text'
 
 interface Props {
   company: CompanyType
@@ -8,9 +9,6 @@ interface Props {
 
 const { company } = Astro.props
 const { name, position, startDate, endDate, projects, technologies, extras, link } = company
-
-const formatedStart = startDate ? new Intl.DateTimeFormat("es-MX", {month:'long', year: 'numeric'}).format(startDate) : ''
-const formatedEnd = endDate ? new Intl.DateTimeFormat("es-MX", {month:'long', year: 'numeric'}).format(endDate) : 'actualidad'
 ---
 
 <div class="mb-4">
@@ -18,23 +16,26 @@ const formatedEnd = endDate ? new Intl.DateTimeFormat("es-MX", {month:'long', ye
     <Icon class="inline w-[1.5rem] text-emerald-600" name="ic:baseline-arrow-right" />
     { name }
   </h4>
-  <em>{ position } ({formatedStart} - {formatedEnd})</em>
+  <em>
+    <Text text={position} client:load /> 
+    ({ startDate ? <Text date={startDate} client:load /> : ''} - {endDate ? <Text date={endDate} client:load />: <Text text="current" client:load />})
+  </em>
 
   { projects && projects.length && 
   <p>
-      <strong>Proyectos: </strong> { projects.join(', ') }
+      <strong><Text text ='projects' client:load />: </strong> { projects.join(', ') }
   </p>
   }
 
   { technologies && technologies.length && 
       <p>
-      <strong>Tecnologías: </strong> { technologies.join(', ') }
+      <strong><Text text ='technologies' client:load />: </strong> { technologies.join(', ') }
       </p>
   }
 
   { extras && extras.length && 
   <p>
-      <strong>Extras: </strong> { extras.join(', ') }
+      <strong><Text text ='others' client:load />: </strong> { extras.join(', ') }
   </p>
   }
 

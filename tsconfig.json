@@ -10,8 +10,13 @@
       ],
       "@/lib": [
         "src/lib/*"
+      ],
+      "@/store": [
+        "src/store/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "extends": "astro/tsconfigs/strict"
 }

@@ -12,7 +12,7 @@ export interface CompanyType {
 export const companies: CompanyType[] = [
   {
     name: 'Freelance',
-    position: 'Ingeniero de Software',
+    position: 'software_engineer',
     startDate: undefined,
     endDate: undefined,
     projects: ['Desarrollo', 'Colaboración', 'Seguridad'],
@@ -22,7 +22,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Wizeline',
-    position: 'Ingeniero de Software',
+    position: 'software_engineer',
     startDate: new Date('03/22/2022'),
     endDate: undefined,
     projects: ['Wizeline Academy', 'Univision'],
@@ -32,7 +32,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Globant',
-    position: 'Programador Senior',
+    position: 'senior_developer',
     startDate: new Date('01/01/2017'),
     endDate: new Date('03/22/2022'),
     projects: ['OpenBank', 'Johnson & Johnson', 'Realogy', 'Marvel'],
@@ -42,7 +42,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Mitec',
-    position: 'Programador Senior',
+    position: 'senior_developer',
     startDate: new Date('07/01/2016'),
     endDate: new Date('01/01/2017'),
     projects: ['Chatbot'],
@@ -52,7 +52,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Gigigo',
-    position: 'Programador Senior',
+    position: 'senior_developer',
     startDate: new Date('05/01/2015'),
     endDate: new Date('07/01/2016'),
     projects: ['Danone', 'Punto Trader Game', 'Coca-cola Pay With Love', 'Bancomer Beacons', 'Marke', 'Abastece Aí', 'Cocacola En Tu Hogar', 'Bluetogo'],
@@ -62,7 +62,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Nurun México / Lead2Action',
-    position: 'Programador Senior',
+    position: 'senior_developer',
     startDate: new Date('08/01/2013'),
     endDate: new Date('05/01/2015'),
     projects: ['Audi', 'Porsche', 'Playskool', 'BestBuy', 'Seat', 'Gamesa', 'Sabritas', 'Pepsi', 'Sonrix'],
@@ -72,7 +72,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Mexanet',
-    position: 'Desarrollador Web',
+    position: 'web_developer',
     startDate: new Date('12/01/2011'),
     endDate: new Date('02/01/2013'),
     projects: ['Oportunica', 'Casas y Terrenos Morelia', 'Red Contacto Médico', 'Muebles Diana', 'Marketer', 'Hotel Jorges', 'Autran Dental Studio', 'Moreliato', 'Poemas Nuevos', 'La Cocina es Arte'],
@@ -82,7 +82,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'Netbit Soluciones',
-    position: 'Desarrollador Web',
+    position: 'web_developer',
     startDate: new Date('02/01/2011'),
     endDate: new Date('12/01/2011'),
     projects: ['Varios'],
@@ -92,7 +92,7 @@ export const companies: CompanyType[] = [
   },
   {
     name: 'BtcIncs',
-    position: 'Programador y Diseñador Web',
+    position: 'web_developer',
     startDate: new Date('09/01/2010'),
     endDate: new Date('02/01/2011'),
     projects: ['Varios'],
@@ -104,69 +104,69 @@ export const companies: CompanyType[] = [
 
 export interface TechnologyType {
   name: string
-	experience: string
+	experience: number
   icon: string
 }
   
 export const technologies: TechnologyType[] = [
   {
     name: 'TypeScript',
-    experience: '1 año',
+    experience: 1,
     icon: 'vscode-icons:file-type-typescript'
   },
   {
     name: 'NodeJS',
-    experience: '5 años',
+    experience: 5,
     icon: 'vscode-icons:file-type-node'
   },
   {
     name: 'PHP',
-    experience: '12 años',
+    experience: 12,
     icon: 'logos:php'
   },
   {
     name: 'Laravel',
-    experience: '5 años',
+    experience: 5,
     icon: 'logos:laravel'
   },
   {
     name: 'React',
-    experience: '2 años',
+    experience: 2,
     icon: 'logos:react'
   },
   {
     name: 'JavaScript',
-    experience: '14 años',
+    experience: 14,
     icon: 'logos:javascript'
   },
   {
     name: 'HTML',
-    experience: '14 años',
+    experience: 14,
     icon: 'vscode-icons:file-type-html'
   },
   {
     name: 'CSS',
-    experience: '14 años',
+    experience: 14,
     icon: 'vscode-icons:file-type-css'
   },
   {
     name: 'MongoDB',
-    experience: '5 años',
+    experience: 5,
     icon: 'vscode-icons:file-type-mongo'
   },
   {
     name: 'MySQL',
-    experience: '10 años',
+    experience: 10,
     icon: 'vscode-icons:file-type-mysql'
   },
   {
     name: 'AWS',
-    experience: '5 años',
+    experience: 5,
     icon: 'logos:aws'
   },
   {
-    name: 'git',
-    experience: '8 años',
+    name: 'Git',
+    experience: 8,
     icon: 'vscode-icons:file-type-git'
   }
 ]
