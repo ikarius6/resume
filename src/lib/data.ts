@@ -68,7 +68,7 @@ export const companies: CompanyType[] = [
     projects: ['Audi', 'Porsche', 'Playskool', 'BestBuy', 'Seat', 'Gamesa', 'Sabritas', 'Pepsi', 'Sonrix'],
     technologies: ['Laravel', 'CodeIgniter', 'PHP', 'NodeJS', 'MySQL', 'APIs', 'AWS', 'Unity', 'HTML', 'JS', 'CSS', 'Git'],
     extras: undefined,
-    link: 'https://www.nurun.com'
+    link: 'https://www.nurun.com/'
   },
   {
     name: 'Mexanet',
