@@ -1,4 +1,6 @@
 ---
 import { defaultLang } from "@/i18n/ui"
+
+// Redirección 301 al idioma por defecto
+return Astro.redirect(`/${defaultLang}/`, 301);
 ---
-<meta http-equiv="refresh" content=`0;url=/${defaultLang}/` />

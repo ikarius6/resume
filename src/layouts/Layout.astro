@@ -14,11 +14,21 @@ interface Props {
 
 const { title } = Astro.props;
 
+// Construir la URL canónica correcta basada en el idioma actual
+const currentPath = Astro.url.pathname;
+const canonicalUrl = `https://alexomar.com${currentPath}`;
+
+// URLs alternativas para hreflang
+const alternateUrls = {
+  es: `https://alexomar.com/es/`,
+  en: `https://alexomar.com/en/`
+};
+
 const metadata = {
   author: "Alex Omar",
-  url: "https://alexomar.com/",
+  url: canonicalUrl,
   description: t('about_me_1'),
-  image: "/img/avatar-min.webp",
+  image: "https://alexomar.com/img/avatar-min.webp",
   keywords: t('keywords')
 }
 ---
@@ -32,6 +42,14 @@ const metadata = {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+    
+    <!-- SEO: URL Canónica -->
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- SEO: Etiquetas hreflang para idiomas alternativos -->
+    <link rel="alternate" hreflang="es" href={alternateUrls.es} />
+    <link rel="alternate" hreflang="en" href={alternateUrls.en} />
+    <link rel="alternate" hreflang="x-default" href={alternateUrls.es} />
     
     <meta property="og:url" content={ metadata.url } />
     <meta property="og:title" content={ title } /> 
